@@ -32,3 +32,64 @@ Además, los lemmings se consideran elementos no sólidos del juego, lo que sign
 
 Pared/suelo
 Es un elemento pasivo en el tablero, de forma que no hace nada al actualizar el tablero. Son sólidos, lo que quiere decir que no puede compartir posición con ningún otro objeto sólido (ninguna otra pared) y que los lemmings pueden estar de pie encima de ellos.
+
+En cada ciclo se pintará el estado actual del tablero, así como otra información extra que no se encuentra de forma visual en el tablero: el ciclo actual del juego (inicialmente 0), el número de lemmings que quedan en el tablero, el número de lemmings muertos y el número de lemmings que ya han salido, seguido del número de lemmings que tienen que salir como mínimo para ganar.
+
+Cada lemming en el tablero se muestra mediante un símbolo 'B' si está caminando hacia la derecha o 'ᗺ' si está caminando a la izquierda (sin comillas). La pared se muestra siempre con el símbolo '▓' y la puerta de salida se muestra con el símbolo '🚪'. También mostraremos el prompt del juego para solicitar al usuario la siguiente acción.
+
+El tablero se pintará por el interfaz consola utilizando caracteres ASCII, como muestra el siguiente ejemplo:
+
+Lemmings 1.0
+
+Number of cycles: 0
+Lemmings in board: 2
+Dead lemmings: 0
+Lemmings exit door: 0 ┃2
+
+      1    2    3    4    5    6    7    8    9   10  
+   ┌——————————————————————————————————————————————————┐
+  A┃                                               B  ┃A
+  B┃                                        ▓▓▓▓▓▓▓▓▓▓┃B
+  C┃                                                  ┃C
+  D┃            B    B                                ┃D
+  E┃          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓                         ┃E
+  F┃                     🚪            ▓▓▓▓▓          ┃F
+  G┃                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓          ┃G
+  H┃                                                  ┃H
+  I┃  B                                     ▓▓▓▓▓     ┃I
+  J┃▓▓▓▓▓▓▓▓▓▓                              ▓▓▓▓▓▓▓▓▓▓┃J
+   └——————————————————————————————————————————————————┘
+      1    2    3    4    5    6    7    8    9   10  
+
+Command > 
+
+En cada turno, tras pintar el tablero, se preguntará al usuario qué quiere hacer, a lo que podrá contestar con uno de los siguientes comandos:
+
+help: Este comando solicita a la aplicación que muestre la ayuda relativa a cómo utilizar los comandos. Se mostrará una línea por cada comando. Cada línea tiene el nombre del comando seguida por ':' y una breve descripción de lo que hace el comando.
+
+Command > help
+
+Available commands:
+[r]eset: start a new game
+[h]elp: print this help message
+[e]xit: end the execution of the game
+[n]one | "": skips cycle
+
+reset: Este comando permite reiniciar la partida, llevando al juego a la configuración inicial.
+
+exit: Este comando permite salir de la aplicación, mostrando previamente el mensaje Player leaves game.
+
+none: El usuario no realiza ninguna acción, se actualiza el juego.
+
+Observaciones sobre los comandos:
+
+La aplicación debe permitir comandos escritos en minúsculas, mayúsculas o mezcla de ambas.
+
+La aplicación debe permitir el uso de la primera letra del comando (o la indicada entre corchetes, si esa letra ya se utiliza) en lugar del comando completo [R]eset, [H]elp, [E]xit, [N]one.
+
+Si el comando es vacío se identifica como none y se avanza al siguiente ciclo de juego.
+
+Si el comando está mal escrito, no existe, o no se puede ejecutar, la aplicación mostrará un mensaje de error.
+
+En el caso de que el usuario ejecute un comando que no cambia el estado del juego, o un comando erróneo, el tablero no se debe repintar.
+
