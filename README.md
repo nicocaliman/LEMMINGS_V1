@@ -39,7 +39,8 @@ Cada lemming en el tablero se muestra mediante un símbolo 'B' si está caminand
 
 El tablero se pintará por el interfaz consola utilizando caracteres ASCII, como muestra el siguiente ejemplo:
 
-![image](https://github.com/user-attachments/assets/9a0e257e-ad7f-4f35-9134-2dee009f20c5
+![image](https://github.com/user-attachments/assets/40743d78-307a-445e-aa7d-e7a8bbe687f3)
+
 
 En cada turno, tras pintar el tablero, se preguntará al usuario qué quiere hacer, a lo que podrá contestar con uno de los siguientes comandos:
 
