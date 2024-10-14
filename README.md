@@ -72,3 +72,8 @@ Si el comando está mal escrito, no existe, o no se puede ejecutar, la aplicaci�
 
 En el caso de que el usuario ejecute un comando que no cambia el estado del juego, o un comando erróneo, el tablero no se debe repintar.
 
+En cada ciclo se produce la actualización de cada lemming, que da lugar a sus movimientos (y más adelante posiblemente a otras acciones).
+El juego finalizará cuando no queden más lemmings en el tablero o cuando el usuario ejecute el comando exit.
+
+Cuando el juego termine por no haber lemmings en el tablero se debe mostrar el mensaje 'Player looses' o el mensaje 'Player wins', en función de si han salido suficientes lemmings. Consulta la clase Messages.java donde ya están definidas estas constantes de tipo String.
+
